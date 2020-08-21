@@ -8,9 +8,11 @@ app = Flask(__name__)
 def hola():
     return "Hola, Mundo!"
 
-@app.route("/sms", methods=['POST'])
-def sms_reply():
-    """Respond to incoming calls with a simple text message."""
+@app.route("/whatsapp", methods=['POST'])
+def whatsapp_reply():
+    """
+    Returns the input message that you send back to you.
+    """
 
     msg = request.form.get('Body')
 
