@@ -2,5 +2,3 @@ whatsapp_env/
 *.pyc
 .DS_Store
 .vscode/
-
-.gitignore
