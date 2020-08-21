@@ -1,4 +1,4 @@
-whatsapp_env/
-*.pyc
 .DS_Store
 .vscode/
+settings.json
+whatsapp_env/
