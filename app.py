@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def hola():
-    return "Hola, Mundo!"
+    return "Hello, Mundo!"
 
 @app.route("/whatsapp", methods=['POST'])
 def whatsapp_reply():
