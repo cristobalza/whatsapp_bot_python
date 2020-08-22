@@ -1,23 +1,21 @@
 from flask import Flask, request
 from twilio.twiml.messaging_response import MessagingResponse
-import os
-from tools import construct_reply
+
+from tools import fetch_reply
 
 app = Flask(__name__)
 
 @app.route("/")
-def hola():
-    return "Hello, Mundo!"
+def hello():
+    return "Hello, World!"
 
 @app.route("/whatsapp", methods=['POST'])
-def whatsapp_reply():
-    """
-    Returns the input message that you send back to you.
-    """
+def sms_reply():
+    """Respond to incoming calls with a simple text message."""
     # Fetch the message
     msg = request.form.get('Body')
     phone_no = request.form.get('From')
-    reply = construct_reply(msg, phone_no)
+    reply = fetch_reply(msg, phone_no)
 
     # Create reply
     resp = MessagingResponse()
