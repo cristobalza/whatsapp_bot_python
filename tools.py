@@ -3,7 +3,7 @@ import dialogflow_v2 as dialogflow
 from dialogflow_v2.types import TextInput, QueryInput
 
 dialogflow_session_client = dialogflow.SessionsClient()
-PROJECT_ID = os.environ['PROJECT_ID']
+PROJECT_ID='train-287200'
 CREDENTIALS = os.environ['GOOGLE_APP_CREDENTIALS']
 
 
