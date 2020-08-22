@@ -3,3 +3,4 @@ settings.json
 whatsapp_env/
 .DS_Store
 data/
+secret.txt
