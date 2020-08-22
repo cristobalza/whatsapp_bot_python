@@ -2,9 +2,10 @@ import os
 import dialogflow_v2 as dialogflow
 from dialogflow_v2.types import TextInput, QueryInput
 
-import dialogflow_v2 as dialogflow
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "secure-site-280108-a72354178baf.json"
 dialogflow_session_client = dialogflow.SessionsClient()
-PROJECT_ID="train-287200"
+PROJECT_ID="secure-site-280108"
+
 
 def detect_intent_from_text(text, session_id, language_code='en'):
     session = dialogflow_session_client.session_path(PROJECT_ID, session_id)
@@ -15,5 +16,8 @@ def detect_intent_from_text(text, session_id, language_code='en'):
 
 
 def fetch_reply(query, session_id):
-	response = detect_intent_from_text(query,session_id)
-	return response.fulfillment_text
+    """
+    Takes a query and returns in a text form
+    """
+    response = detect_intent_from_text(query,session_id)
+    return response.fulfillment_text
