@@ -14,13 +14,13 @@ def whatsapp_reply():
     """
     Returns the input message that you send back to you.
     """
-
+    # Fetch the message
     msg = request.form.get('Body')
-    phone_number = request.form.get('From')
-    reply = construct_reply(msg, phone_number)
-    
+    phone_no = request.form.get('From')
+    reply = construct_reply(msg, phone_no)
+
+    # Create reply
     resp = MessagingResponse()
-    # resp.message("You said: {}".format(msg))
     resp.message(reply)
 
     return str(resp)
