@@ -4,5 +4,4 @@ whatsapp_env/
 .DS_Store
 data/
 secret.txt
-*.json
 utils.py
