@@ -29,7 +29,7 @@ def create():
     msg = request.form.get('Body')
     phone_num = request.form.get('From')
     session_client = dialogflow.SessionsClient()
-    session = session_client.session_path(DIALOGFLOW_PROJECT_ID, SESSION_ID)
+    session = session_client.session_path(DIALOGFLOW_PROJECT_ID, phone_num)
     text_input = dialogflow.types.TextInput(text=msg, language_code=DIALOGFLOW_LANGUAGE_CODE)
     query_input = dialogflow.types.QueryInput(text=text_input)
     try:
