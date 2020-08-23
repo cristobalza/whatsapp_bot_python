@@ -8,9 +8,10 @@ from dialogflow_v2.types import TextInput, QueryInput
 from google.api_core.exceptions import InvalidArgument
 import requests
 
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'private-key.json'
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'private-key-1.json'
 
-DIALOGFLOW_PROJECT_ID = 'whatsapp-project-1'
+# DIALOGFLOW_PROJECT_ID = 'whatsapp-project-1'
+DIALOGFLOW_PROJECT_ID = 'secure-site-280108'
 DIALOGFLOW_LANGUAGE_CODE = 'en'
 SESSION_ID = 'me'
 
