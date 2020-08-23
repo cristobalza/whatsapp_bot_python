@@ -3,7 +3,7 @@ from twilio.twiml.messaging_response import MessagingResponse
 import os
 import dialogflow_v2 as dialogflow 
 # from dialogflow_v2.types import TextInput, QueryInput
-
+from utils import *
 
 from google.api_core.exceptions import InvalidArgument
 import requests
@@ -24,7 +24,7 @@ def root():
     return "Hola, Mundo!"
 
 @app.route("/whatsapp", methods=['POST'])
-def whatsapp_reply():
+def create():
     """Respond to incoming calls with a simple text message."""
     msg = request.form.get('Body')
     phone_num = request.form.get('From')
@@ -43,6 +43,19 @@ def whatsapp_reply():
     print('Fulfillmnet text:', response.query_result.fulfillment_text)
     # sendMessage()
     return response.query_result.fulfillment_text
+    
+def whatsapp_reply(phone_num, message):
+    
+    url = "https://api.twilio.com/2010-04-01/Accounts/ACb4f3673da88894b59e7943e7051cfe39/Messages.json"
 
+    payload = {'From': 'whatsapp:'+ my_phone_number,
+    'Body':message,
+    'To':phone_num
+    }
+    
+    headers = {'Authorization': 'Basic QUNiNGYzNjczZGE4ODg5NGI1OWU3OTQzZTcwNTFjZmUzOTpkOWI4N2VjOTY5OTk1ZDc3MDliNDg3OWEzY2U5ZWNkNQ=='}
+    response = requests.request("GET", url, headers=headers, data = payload)
+    print(response.text.encode('utf8'))
+    return ""
 if __name__ == "__main__":
     app.run()
