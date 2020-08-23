@@ -43,8 +43,10 @@ def create():
     # print('Fulfillmnet text:', response.query_result.fulfillment_text)
 
     reply_diagfl = response.query_result.fulfillment_text
+
     resp_twi = MessagingResponse()
-    resp_twi.message(reply_diagfl)
+    resp_twi.message("Tu dijiste: {}".format(msg))
+    # resp_twi.message(reply_diagfl)
 
     return str(resp_twi)
 
