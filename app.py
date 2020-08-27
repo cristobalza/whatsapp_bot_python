@@ -3,17 +3,14 @@ from twilio.twiml.messaging_response import MessagingResponse
 import os
 import dialogflow_v2 as dialogflow 
 from dialogflow_v2.types import TextInput, QueryInput
-
-
 from google.api_core.exceptions import InvalidArgument
 import requests
 
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'private-key-1.json'
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'private-key.json'
 
-# DIALOGFLOW_PROJECT_ID = 'whatsapp-project-1'
-DIALOGFLOW_PROJECT_ID = 'secure-site-280108'
+DIALOGFLOW_PROJECT_ID = 'whatsapp-project-1'
 DIALOGFLOW_LANGUAGE_CODE = 'en'
-SESSION_ID = 'me'
+# SESSION_ID = 'me' 
 
 
 

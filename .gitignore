@@ -6,3 +6,4 @@ data/
 secret.txt
 utils.py
 keys/
+*.json
